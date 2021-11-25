@@ -1,18 +1,27 @@
 #include "writer.h"
 #include <cstring>
+#include "stringwriter.h"
 
-class StringWriter : Writer
-{
-private:
-    char *string;
-
-public:
-     StringWriter(const StringWriter&) = delete;
-
-     StringWriter& operator=(const StringWriter&) = delete;
-
-    StringWriter(char *init_string)
+StringWriter::StringWriter(char *init_string)
     {
-        strcpy(string, init_string);
+        string_ptr = init_string;
     }
-};
+
+Writer& StringWriter::operator<<(int value)
+    {
+        return *this;
+    }
+
+Writer& StringWriter::operator<<(double value)
+    {
+        return *this;
+    }
+
+Writer& StringWriter::operator<<(char* str)
+    {
+        return *this;
+    }
+
+StringWriter::~StringWriter()
+    {
+    }

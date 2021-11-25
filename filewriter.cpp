@@ -1,18 +1,27 @@
 #include "writer.h"
 #include <cstring>
+#include "filewriter.h"
 
-class FileWriter : Writer
-{
-private:
-    char *file_name;
-
-public:
-     FileWriter(const FileWriter&) = delete;
-
-     FileWriter& operator=(const FileWriter&) = delete;
-
-    FileWriter(char *init_file_name)
+FileWriter::FileWriter(char *init_file_name)
     {
         strcpy(file_name, init_file_name);
     }
-};
+
+Writer& FileWriter::operator<<(int value)
+    {
+        return *this;
+    }
+
+Writer& FileWriter::operator<<(double value)
+    {
+        return *this;
+    }
+
+Writer& FileWriter::operator<<(char* str)
+    {
+        return *this;
+    }
+
+FileWriter::~FileWriter()
+{
+}

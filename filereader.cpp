@@ -1,18 +1,27 @@
 #include "reader.h"
 #include <cstring>
+#include "filereader.h"
 
-class FileReader : Reader
-{
-private:
-    char *file_name;
-
-public:
-     FileReader(const FileReader&) = delete;
-
-     FileReader& operator=(const FileReader&) = delete;
-
-    FileReader(char *init_file_name)
+FileReader::FileReader(char *init_file_name)
     {
         strcpy(file_name, init_file_name);
     }
-};
+
+Reader& FileReader::operator>>(int value)
+    {
+        return *this;
+    }
+
+Reader& FileReader::operator>>(double value)
+    {
+        return *this;
+    }
+
+Reader& FileReader::operator>>(char* str)
+    {
+        return *this;
+    }
+
+FileReader::~FileReader()
+{
+}
