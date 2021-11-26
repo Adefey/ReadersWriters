@@ -3,15 +3,14 @@
 #include "filereader.h"
 #include <stdio.h>
 
-FileReader::FileReader(char *init_file_name)
+FileReader::FileReader(char *init_file_name) : file_name{init_file_name}
     {
-        file_name = init_file_name;
     }
 
 Reader& FileReader::operator>>(int &value)
     {
         FILE *f;
-        if (f = fopen(file_name, "r"))
+        if ((f = fopen(file_name, "r")))
         {
             fscanf(f, "%i", &value);
         }
@@ -22,7 +21,7 @@ Reader& FileReader::operator>>(int &value)
 Reader& FileReader::operator>>(double &value)
     {
         FILE *f;
-        if (f = fopen(file_name, "r"))
+        if ((f = fopen(file_name, "r")))
         {
             fscanf(f, "%lf", &value);
         }
@@ -33,7 +32,7 @@ Reader& FileReader::operator>>(double &value)
 Reader& FileReader::operator>>(char* str)
     {
         FILE *f;
-        if (f = fopen(file_name, "r"))
+        if ((f = fopen(file_name, "r")))
         {
             fscanf(f, "%s", str);
         }

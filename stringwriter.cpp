@@ -4,9 +4,8 @@
 #include <stdlib.h>
 #include <cstdio>
 
-StringWriter::StringWriter(char *init_string)
+StringWriter::StringWriter(char *init_string) : string_ptr{init_string}
     {
-        string_ptr = init_string;
     }
 
 Writer& StringWriter::operator<<(int value)

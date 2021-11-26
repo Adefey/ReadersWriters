@@ -4,9 +4,8 @@
 #include <cstdio>
 #include <stdlib.h>
 
-StringReader::StringReader(char *init_string)
+StringReader::StringReader(char *init_string) : string_ptr{init_string}
     {
-        string_ptr = init_string;
     }
 
 Reader& StringReader::operator>>(int &value)

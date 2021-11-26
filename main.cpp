@@ -4,7 +4,7 @@
 #include "filereader.h"
 #include "filewriter.h"
 
-int main(int argc, char** argv)
+int main()
 {
     char test[] = "test";
     int a;
