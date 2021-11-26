@@ -6,16 +6,21 @@
 
 int main(int argc, char** argv)
 {
-    char c[100]="";
-    StringReader sr(c);
-    StringWriter sw(c);
+    char str[100]="";
+    StringReader sr(str);
+    StringWriter sw(str);
+    char str2[] = "test";
 
     sw<<2.123;
-    sw<<"a";
+    sw<<str2;
     sw<<14565;
-    std::cout<<c<<"\n";
+    std::cout<<str<<"\n";
     int a = 0;
     sr>>a;
-    std::cout<<a<<"\n";
+    double b = 0.0;
+    sr>>b;
+    char c[100];
+    sr>>c;
+    std::cout<<a<<"\n"<<b<<"\n"<<c<<"\n";
     return 0;
 }

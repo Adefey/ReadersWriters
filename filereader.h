@@ -14,9 +14,9 @@ public:
 
     FileReader(char *init_file_name);
 
-    Reader& operator>>(int value) override;
+    Reader& operator>>(int &value) override;
 
-    Reader& operator>>(double value) override;
+    Reader& operator>>(double &value) override;
 
     Reader& operator>>(char* str) override;
 

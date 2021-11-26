@@ -9,13 +9,13 @@ StringReader::StringReader(char *init_string)
         string_ptr = init_string;
     }
 
-Reader& StringReader::operator>>(int value)
+Reader& StringReader::operator>>(int &value)
     {
         value = atoi(string_ptr);
         return *this;
     }
 
-Reader& StringReader::operator>>(double value)
+Reader& StringReader::operator>>(double &value)
     {
          value = atof(string_ptr);
         return *this;
@@ -23,7 +23,7 @@ Reader& StringReader::operator>>(double value)
 
 Reader& StringReader::operator>>(char* str)
     {
-        strcat(string_ptr, str);
+        strcat(str, string_ptr);
         return *this;
     }
 
