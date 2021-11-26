@@ -6,21 +6,36 @@
 
 int main(int argc, char** argv)
 {
+    char test[] = "test";
+    int a;
+    double b;
+    char c[100];
+
     char str[100]="";
     StringReader sr(str);
     StringWriter sw(str);
-    char str2[] = "test";
-
-    sw<<2.123;
-    sw<<str2;
-    sw<<14565;
-    std::cout<<str<<"\n";
-    int a = 0;
+    sw<<1.123;
+    sw<<test;
+    sw<<256;
+    std::cout<<"Content of the string inside of Reader/Writer: "<<str<<"\n";
     sr>>a;
-    double b = 0.0;
     sr>>b;
-    char c[100];
     sr>>c;
-    std::cout<<a<<"\n"<<b<<"\n"<<c<<"\n";
+    std::cout<<"String reader/writer: \n"<<"int: "<<a<<"\n"<<"double: "<<b<<"\n"<<"char* :"<<c<<"\n";
+
+    a = 0;
+    b = 0.0;
+    strcpy(c, "");
+    char file_name[100]="text.txt";
+    FileWriter fw(file_name);
+    FileReader fr(file_name);
+    fw<<1.123;
+    fw<<test;
+    fw<<256;
+    fr>>a;
+    fr>>b;
+    fr>>c;
+    std::cout<<"File reader/writer: \n"<<"int: "<<a<<"\n"<<"double: "<<b<<"\n"<<"char* :"<<c<<"\n";
+
     return 0;
 }

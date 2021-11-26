@@ -5,7 +5,7 @@
 
 FileWriter::FileWriter(char *init_file_name)
     {
-        strcpy(file_name, init_file_name);
+        file_name = init_file_name;
     }
 
 Writer& FileWriter::operator<<(int value)
