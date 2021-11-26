@@ -6,10 +6,16 @@
 
 int main(int argc, char** argv)
 {
-    char c[10000];
-    char newc[8] {"solesye"};
+    char c[100]="";
     StringReader sr(c);
-    sr>>newc;
-    std::cout<<c;
+    StringWriter sw(c);
+
+    sw<<2.123;
+    sw<<"a";
+    sw<<14565;
+    std::cout<<c<<"\n";
+    int a = 0;
+    sr>>a;
+    std::cout<<a<<"\n";
     return 0;
 }
